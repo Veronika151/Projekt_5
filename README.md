@@ -1,10 +1,8 @@
 # 🐶 Dog Breeds Analysis
 
-Cílem projektu bylo vytvořit interaktivní dashboard v prostředí **Microsoft Power BI**, který umožňuje přehledně analyzovat fyzické a behaviorální charakteristiky psích plemen.
+Pro Power BI projekt jsem si vybrala veřejně dostupný dataset obsahující informace o **391 psích plemenech**. Cílem bylo navrhnout interaktivní analytický dashboard, který umožňuje přehledně porovnávat fyzické i behaviorální charakteristiky jednotlivých psích plemen.
 
-Report vychází z veřejně dostupného datasetu obsahujícího **391 psích plemen** a poskytuje uživatelům možnost porovnávat jednotlivá plemena z hlediska velikosti, fyzických parametrů, délky života i vybraných behaviorálních vlastností.
-
-Dashboard je rozdělen do čtyř tematických stránek, které vedou uživatele od celkového přehledu datasetu až k detailnímu profilu konkrétního plemene.
+Dashboard je rozdělen do čtyř tematických stránek, které uživatele provedou od celkového přehledu datasetu až k detailnímu profilu konkrétního plemene.
 
 
 Mezi analyzované oblasti patří:
