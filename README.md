@@ -21,37 +21,43 @@ Mezi analyzované oblasti patří:
 
 ---
 
-## 📊 Použitá data
+# 📊 Použitá data
 
 Projekt využívá veřejně dostupný dataset obsahující informace o fyzických a behaviorálních vlastnostech psích plemen.
 
-**Zdroj dat:**
+**Zdroj dat**
 
-> [https://www.kaggle.com/datasets/yonkotoshiro/dogs-breedsetem]
+> https://www.kaggle.com/datasets/yonkotoshiro/dogs-breeds
 
-Před vytvořením reportu byla data upravena v prostředí **Power Query**. Úpravy zahrnovaly zejména kontrolu datových typů, odstranění nepotřebných sloupců a přípravu dat pro následnou analýzu a tvorbu datového modelu.
+Před vytvořením reportu byla data upravena v prostředí **Power Query**, kde byly zkontrolovány datové typy, odstraněny nepotřebné sloupce a připraven datový model pro následnou analýzu.
+
+Zdrojový CSV soubor není součástí repozitáře. Pro aktualizaci dat v Power BI je potřeba stáhnout dataset z uvedeného odkazu a případně upravit cestu ke zdrojovému souboru.
 
 ---
 
-## 📄 Struktura reportu
+# 📄 Struktura reportu
 
 Report obsahuje čtyři interaktivní stránky, které uživatele postupně provedou od celkového přehledu datasetu přes analýzu fyzických a behaviorálních vlastností až k detailnímu profilu konkrétního plemene.
 
 ### 1. Executive Dashboard
 
-![Executive Dashboard](images/executive-dashboard.png)
+<p align="center">
+  <img src="images/01-executive-dashboard.png" alt="Executive Dashboard" width="650">
+</p>
 
 Úvodní stránka poskytuje rychlý přehled celého datasetu. Zobrazuje počet analyzovaných plemen, průměrnou výšku, průměrnou hmotnost a průměrnou délku života.
 
-Součástí stránky je také porovnání počtu plemen podle skupin a rozdělení plemen do jednotlivých velikostních kategorií. Stránka slouží jako výchozí bod pro další analýzu reportu.
+Součástí stránky je porovnání počtu plemen podle skupin a jejich rozdělení do velikostních kategorií. Slouží jako výchozí bod pro další analýzu reportu.
 
 ---
 
-### 2. Physical Characteristics
+## 2. Physical Characteristics
 
-![Physical Characteristics](images/physical-characteristics.png)
+<p align="center">
+  <img src="images/02-physical-characteristics.png" alt="Physical Characteristics" width="900">
+</p>
 
-Stránka je zaměřena na fyzické charakteristiky jednotlivých psích plemen.
+Stránka je zaměřena na fyzické charakteristiky jednotlivých plemen.
 
 Umožňuje porovnávat vztah mezi průměrnou výškou a hmotností, sledovat rozdíly v délce života mezi jednotlivými skupinami plemen a zobrazit detailní údaje o konkrétních plemenech.
 
@@ -59,25 +65,29 @@ Součástí stránky je také dynamický panel **Did You Know?**, který zobrazu
 
 ---
 
-### 3. Behavior & Lifestyle
+## 3. Behavior & Lifestyle
 
-![Behavior & Lifestyle](images/behavior-lifestyle.png)
+<p align="center">
+  <img src="images/03-behavior-lifestyle.png" alt="Behavior & Lifestyle" width="900">
+</p>
 
 Stránka porovnává behaviorální charakteristiky jednotlivých skupin plemen.
 
 Analýza se soustředí na tři hlavní oblasti:
 
-- **Social Friendliness** – společenskost a vztah k rodině, dětem, cizím lidem a ostatním psům,
+- **Social Friendliness** – vztah k rodině, dětem, cizím lidem a ostatním psům,
 - **Learning Ability** – inteligence a cvičitelnost,
-- **Activity Needs** – energetická úroveň a potřeba pohybu.
+- **Activity Needs** – úroveň aktivity a potřeba pohybu.
 
-Součástí stránky je dynamický panel **Behavior Insight**, který automaticky interpretuje aktuálně zobrazená data a upozorňuje na výrazné rozdíly mezi skupinami plemen.
+Součástí stránky je dynamický panel **Behavior Insight**, který automaticky interpretuje aktuálně zobrazená data a upozorňuje na zajímavé rozdíly mezi skupinami plemen.
 
 ---
 
-### 4. Breed Profile
+## 4. Breed Profile
 
-![Breed Profile](images/breed-profile.png)
+<p align="center">
+  <img src="images/04-breed-profile.png" alt="Breed Profile" width="900">
+</p>
 
 Poslední stránka nabízí detailní profil vybraného plemene.
 
@@ -89,9 +99,9 @@ Tlačítko **Reset Filters** umožňuje rychle vymazat všechny aktivní filtry 
 
 ---
 
-## 🗂️ Datový model
+# 🗂️ Datový model
 
-Projekt využívá jednoduché **hvězdicové schéma neboli Star Schema**.
+Projekt využívá jednoduché **hvězdicové schéma (Star Schema)**.
 
 Datový model je tvořen hlavní tabulkou `Dogs`, dvěma dimenzními tabulkami a samostatnou tabulkou pro správu DAX measures.
 
@@ -100,7 +110,7 @@ Datový model je tvořen hlavní tabulkou `Dogs`, dvěma dimenzními tabulkami a
 - `Dogs` – hlavní tabulka obsahující informace o jednotlivých plemenech,
 - `Breed Groups` – dimenzní tabulka obsahující jedinečné skupiny plemen,
 - `Dog Sizes` – dimenzní tabulka obsahující jedinečné velikostní kategorie,
-- `Measure Table` – samostatná tabulka obsahující DAX measures.
+- `Measure Table` – samostatná tabulka obsahující všechny DAX measures.
 
 Tabulky `Breed Groups` a `Dog Sizes` jsou propojeny s hlavní tabulkou `Dogs` pomocí relací typu **1:N**.
 
@@ -116,52 +126,48 @@ Breed Groups (1)
 Measure Table
 ```
 
-Toto řešení umožňuje přehledné filtrování dat, jednodušší správu modelu a konzistentní použití dimenzí napříč celým reportem.
+Toto řešení zajišťuje přehledný datový model, správné filtrování mezi tabulkami a jednodušší správu reportu.
 
 ---
 
-## 🧮 DAX výpočty
+# 🧮 DAX výpočty
 
-Projekt obsahuje vlastní DAX measures využívané pro tvorbu KPI ukazatelů, dynamických textů, hodnocení a detailních profilů plemen.
+Projekt obsahuje vlastní DAX measures využívané pro tvorbu KPI ukazatelů, dynamických textů a interaktivních prvků reportu.
 
-Mezi hlavní measures patří například:
+Mezi hlavní výpočty patří například:
 
-- `Total Breeds`
-- `Average Height`
-- `Average Weight`
-- `Average Lifespan`
-- `Average Social Friendliness`
-- `Average Learning Ability`
-- `Average Activity Needs`
-- `Behavior Insight`
-- `Fun Fact`
-- `Selected Breed`
-- `Selected Height`
-- `Selected Weight`
-- `Selected Lifespan`
+- Total Breeds
+- Average Height
+- Average Weight
+- Average Lifespan
+- Average Social Friendliness
+- Average Learning Ability
+- Average Activity Needs
+- Behavior Insight
+- Fun Fact
 
-Projekt rovněž obsahuje kalkulovaný sloupec `Family Friendliness Category`, který rozděluje plemena podle úrovně společenskosti do následujících kategorií:
+Součástí projektu je také kalkulovaný sloupec **Family Friendliness Category**, který rozděluje plemena podle úrovně společenskosti do kategorií:
 
-- `Highly Social`
-- `Moderately Social`
-- `Less Social`
+- Highly Social
+- Moderately Social
+- Less Social
 
-Tato kategorie je následně použita v detailním profilu plemene jako slovní interpretace jeho společenskosti.
+Tato informace je následně zobrazena v detailním profilu vybraného plemene.
 
 ---
 
-## ⚙️ Použité technologie
+# ⚙️ Použité technologie
 
 | Technologie | Využití |
-|---|---|
+|-------------|----------|
 | Microsoft Power BI Desktop | Tvorba datového modelu, reportu a vizualizací |
 | Power Query | Čištění, transformace a příprava dat |
-| DAX | Výpočty, KPI, dynamické texty a interaktivní prvky |
-| GitHub | Prezentace a dokumentace projektu |
+| DAX | Výpočty, KPI ukazatele a dynamické prvky |
+| GitHub | Správa verzí a dokumentace projektu |
 
 ---
 
-## ✨ Klíčové funkce reportu
+# ✨ Klíčové funkce reportu
 
 - interaktivní filtrování pomocí slicerů,
 - navigace mezi jednotlivými stránkami,
@@ -176,12 +182,12 @@ Tato kategorie je následně použita v detailním profilu plemene jako slovní 
 
 ---
 
-## 📈 Použité vizualizace
+# 📈 Použité vizualizace
 
 Report využívá několik typů vizualizací:
 
 - KPI karty,
-- sloupcové grafy,
+- seskupený sloupcový graf,
 - prstencový graf,
 - bodový graf,
 - tabulku,
@@ -192,7 +198,7 @@ Report využívá několik typů vizualizací:
 
 ---
 
-## 📁 Struktura repozitáře
+# 📁 Struktura repozitáře
 
 ```text
 Dog-Breeds-Analysis/
@@ -201,8 +207,8 @@ Dog-Breeds-Analysis/
 ├── README.md
 │
 └── images/
-    ├── executive-dashboard.png
-    ├── physical-characteristics.png
-    ├── behavior-lifestyle.png
-    └── breed-profile.png
+    ├── 01-executive-dashboard.png
+    ├── 02-physical-characteristics.png
+    ├── 03-behavior-lifestyle.png
+    └── 04-breed-profile.png
 ```
