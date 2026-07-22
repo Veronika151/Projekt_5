@@ -38,7 +38,7 @@ Před vytvořením reportu byla data připravena v prostředí Power Query, kde 
 
 Report obsahuje čtyři interaktivní stránky, které uživatele postupně provedou od celkového přehledu datasetu přes analýzu fyzických a behaviorálních vlastností až k detailnímu profilu konkrétního plemene.
 
-### 1. Executive Dashboard
+## 1. Executive Dashboard
 
 <p align="center">
   <img src="images/01-executive-dashboard.png" alt="Executive Dashboard" width="700">
