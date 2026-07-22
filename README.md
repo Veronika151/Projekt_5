@@ -31,8 +31,6 @@ Projekt využívá veřejně dostupný dataset obsahující informace o fyzický
 
 Před vytvořením reportu byla data upravena v prostředí **Power Query**, kde byly zkontrolovány datové typy, odstraněny nepotřebné sloupce a připraven datový model pro následnou analýzu.
 
-Zdrojový CSV soubor není součástí repozitáře. Pro aktualizaci dat v Power BI je potřeba stáhnout dataset z uvedeného odkazu a případně upravit cestu ke zdrojovému souboru.
-
 ---
 
 # 📄 Struktura reportu
@@ -101,9 +99,7 @@ Tlačítko **Reset Filters** umožňuje rychle vymazat všechny aktivní filtry 
 
 # 🗂️ Datový model
 
-Projekt využívá jednoduché **hvězdicové schéma (Star Schema)**.
-
-Datový model je tvořen hlavní tabulkou `Dogs`, dvěma dimenzními tabulkami a samostatnou tabulkou pro správu DAX measures.
+Projekt využívá jednoduché hvězdicové schéma (Star Schema).
 
 ### Použité tabulky
 
@@ -163,7 +159,6 @@ Tato informace je následně zobrazena v detailním profilu vybraného plemene.
 | Microsoft Power BI Desktop | Tvorba datového modelu, reportu a vizualizací |
 | Power Query | Čištění, transformace a příprava dat |
 | DAX | Výpočty, KPI ukazatele a dynamické prvky |
-| GitHub | Správa verzí a dokumentace projektu |
 
 ---
 
