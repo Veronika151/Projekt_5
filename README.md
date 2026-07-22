@@ -1,18 +1,8 @@
 # 🐶 Dog Breeds Analysis Dashboard
 
----
+Interaktivní dashboard vytvořený v **Microsoft Power BI**, který umožňuje analyzovat fyzické i behaviorální charakteristiky psích plemen.
 
-## 📌 O projektu
-
-Tento projekt vznikl jako závěrečný projekt v rámci kurzu **Power BI v Engeto Academy**.
-
-Cílem bylo vytvořit interaktivní report pro analýzu dat o psích plemenech. Report umožňuje porovnávat fyzické a behaviorální charakteristiky jednotlivých plemen, sledovat rozdíly mezi skupinami a zobrazit detailní profil konkrétního plemene.
-
----
-
-## 📊 Použitá data
-
-Dataset obsahuje informace o **391 psích plemenech**.
+Report vychází z datasetu obsahujícího **391 psích plemen** a nabízí přehledné vizualizace i detailní informace o jednotlivých plemenech prostřednictvím čtyř tematicky zaměřených interaktivních stránek.
 
 Mezi analyzované oblasti patří:
 
@@ -23,176 +13,196 @@ Mezi analyzované oblasti patří:
 - průměrná délka života,
 - inteligence,
 - cvičitelnost,
-- energetická úroveň,
+- úroveň aktivity,
 - celkový zdravotní stav,
 - potřeba pohybu,
 - vztah k rodině, dětem, cizím lidem a ostatním psům,
-- odkaz na detailní informace o plemeni.
+- odkaz na detailní informace o vybraném plemeni.
 
 ---
 
-## 🧭 Struktura reportu
+## 📊 Použitá data
 
-Report obsahuje čtyři interaktivní stránky.
+Projekt využívá veřejně dostupný dataset obsahující informace o fyzických a behaviorálních vlastnostech psích plemen.
+
+**Zdroj dat:**
+
+> [https://www.kaggle.com/datasets/yonkotoshiro/dogs-breedsetem]
+
+Před vytvořením reportu byla data upravena v prostředí **Power Query**. Úpravy zahrnovaly zejména kontrolu datových typů, odstranění nepotřebných sloupců a přípravu dat pro následnou analýzu a tvorbu datového modelu.
+
+---
+
+## 📄 Struktura reportu
+
+Report obsahuje čtyři interaktivní stránky, které uživatele postupně provedou od celkového přehledu datasetu přes analýzu fyzických a behaviorálních vlastností až k detailnímu profilu konkrétního plemene.
 
 ### 1. Executive Dashboard
 
-Úvodní stránka poskytuje základní přehled o datasetu.
+![Executive Dashboard](images/executive-dashboard.png)
 
-Obsahuje:
+Úvodní stránka poskytuje rychlý přehled celého datasetu. Zobrazuje počet analyzovaných plemen, průměrnou výšku, průměrnou hmotnost a průměrnou délku života.
 
-- celkový počet plemen,
-- průměrnou výšku,
-- průměrnou hmotnost,
-- průměrnou délku života,
-- rozdělení plemen podle skupin,
-- rozdělení plemen podle velikosti.
+Součástí stránky je také porovnání počtu plemen podle skupin a rozdělení plemen do jednotlivých velikostních kategorií. Stránka slouží jako výchozí bod pro další analýzu reportu.
+
+---
 
 ### 2. Physical Characteristics
 
-Stránka zaměřená na fyzické vlastnosti plemen.
+![Physical Characteristics](images/physical-characteristics.png)
 
-Obsahuje:
+Stránka je zaměřena na fyzické charakteristiky jednotlivých psích plemen.
 
-- tabulku s detaily jednotlivých plemen,
-- scatter plot výšky a hmotnosti,
-- průměrnou délku života podle skupin plemen,
-- dynamický panel **Did You Know?**
+Umožňuje porovnávat vztah mezi průměrnou výškou a hmotností, sledovat rozdíly v délce života mezi jednotlivými skupinami plemen a zobrazit detailní údaje o konkrétních plemenech.
+
+Součástí stránky je také dynamický panel **Did You Know?**, který zobrazuje doplňující informace vztahující se k aktuálně vybraným datům.
+
+---
 
 ### 3. Behavior & Lifestyle
 
-Stránka porovnává behaviorální charakteristiky mezi skupinami plemen.
+![Behavior & Lifestyle](images/behavior-lifestyle.png)
 
-Obsahuje:
+Stránka porovnává behaviorální charakteristiky jednotlivých skupin plemen.
 
-- matici jednotlivých behaviorálních atributů,
-- porovnání ukazatelů **Social Friendliness**, **Learning Ability** a **Activity Needs**,
-- dynamický textový panel **Behavior Insight**.
+Analýza se soustředí na tři hlavní oblasti:
+
+- **Social Friendliness** – společenskost a vztah k rodině, dětem, cizím lidem a ostatním psům,
+- **Learning Ability** – inteligence a cvičitelnost,
+- **Activity Needs** – energetická úroveň a potřeba pohybu.
+
+Součástí stránky je dynamický panel **Behavior Insight**, který automaticky interpretuje aktuálně zobrazená data a upozorňuje na výrazné rozdíly mezi skupinami plemen.
+
+---
 
 ### 4. Breed Profile
 
-Detailní profil vybraného plemene.
+![Breed Profile](images/breed-profile.png)
 
-Obsahuje:
+Poslední stránka nabízí detailní profil vybraného plemene.
 
-- výběr podle skupiny, velikosti a názvu plemene,
-- základní fyzické charakteristiky,
-- hvězdičkové behaviorální hodnocení,
-- slovní kategorii společenskosti,
-- dynamický odkaz na podrobný popis plemene,
-- tlačítko pro vymazání všech průřezů.
+Pomocí interaktivních filtrů lze vybírat plemeno podle skupiny, velikosti a názvu. Stránka následně zobrazuje jeho fyzické charakteristiky, průměrnou délku života a hodnocení vybraných vlastností pomocí hvězdičkového systému.
+
+Součástí profilu je také slovní interpretace společenskosti plemene a tlačítko **Learn More**, které odkazuje na externí stránku s podrobnějšími informacemi.
+
+Tlačítko **Reset Filters** umožňuje rychle vymazat všechny aktivní filtry na stránce.
 
 ---
 
 ## 🗂️ Datový model
 
-Datový model je vytvořen jako jednoduché hvězdicové schéma.
+Projekt využívá jednoduché **hvězdicové schéma neboli Star Schema**.
 
-Použité tabulky:
+Datový model je tvořen hlavní tabulkou `Dogs`, dvěma dimenzními tabulkami a samostatnou tabulkou pro správu DAX measures.
 
-- `Dogs`
-- `Breed Groups`
-- `Dog Sizes`
-- `Measure Table`
+### Použité tabulky
 
-Tabulky `Breed Groups` a `Dog Sizes` jsou propojeny s tabulkou `Dogs` relacemi typu **1:N**.
+- `Dogs` – hlavní tabulka obsahující informace o jednotlivých plemenech,
+- `Breed Groups` – dimenzní tabulka obsahující jedinečné skupiny plemen,
+- `Dog Sizes` – dimenzní tabulka obsahující jedinečné velikostní kategorie,
+- `Measure Table` – samostatná tabulka obsahující DAX measures.
 
-# 🧮 DAX
+Tabulky `Breed Groups` a `Dog Sizes` jsou propojeny s hlavní tabulkou `Dogs` pomocí relací typu **1:N**.
 
-Projekt obsahuje vlastní:
+```text
+Breed Groups (1)
+        │
+        ▼
+      Dogs (*)
+        ▲
+        │
+ Dog Sizes (1)
 
-- Measures
-- Kalkulované sloupce
-- Kalkulovanou tabulku
+Measure Table
+```
 
-## Příklady vytvořených measures
-
-- Total Breeds
-- Average Height (cm)
-- Average Weight (kg)
-- Average Lifespan (years)
-- Average Social Friendliness
-- Average Learning Ability
-- Average Activity Needs
-- Behavior Insight
-- Fun Fact
-- Selected Breed
-- Selected Height
-- Selected Weight
-- Selected Lifespan
-
-## Kalkulovaný sloupec
-
-Projekt využívá kalkulovaný sloupec:
-
-`Family Friendliness Category`
-
-který na základě kombinace atributů:
-
-- Kid-Friendly
-- Affectionate With Family
-- Dog Friendly
-- Friendly Toward Strangers
-
-vytváří slovní kategorii společenskosti:
-
-- Highly Social
-- Moderately Social
-- Less Social
+Toto řešení umožňuje přehledné filtrování dat, jednodušší správu modelu a konzistentní použití dimenzí napříč celým reportem.
 
 ---
 
-# ⚙️ Použité technologie
+## 🧮 DAX výpočty
 
-- Microsoft Power BI Desktop
-- Power Query
-- DAX
+Projekt obsahuje vlastní DAX measures využívané pro tvorbu KPI ukazatelů, dynamických textů, hodnocení a detailních profilů plemen.
 
----
+Mezi hlavní measures patří například:
 
-# 🎨 Použité prvky Power BI
+- `Total Breeds`
+- `Average Height`
+- `Average Weight`
+- `Average Lifespan`
+- `Average Social Friendliness`
+- `Average Learning Ability`
+- `Average Activity Needs`
+- `Behavior Insight`
+- `Fun Fact`
+- `Selected Breed`
+- `Selected Height`
+- `Selected Weight`
+- `Selected Lifespan`
 
-V projektu byly využity:
+Projekt rovněž obsahuje kalkulovaný sloupec `Family Friendliness Category`, který rozděluje plemena podle úrovně společenskosti do následujících kategorií:
 
-- KPI Cards
-- Table
-- Matrix
-- Clustered Column Chart
-- Donut Chart
-- Scatter Plot
-- Slicery
-- Navigace mezi stránkami
-- Dynamické textové prvky
-- Dynamický Web URL
-- Reset Filters
-- Cross-filtering mezi vizuály
+- `Highly Social`
+- `Moderately Social`
+- `Less Social`
 
----
-
-# ✨ Hlavní funkce reportu
-
-| Funkce | Popis |
-|--------|-------|
-| 📌 Interaktivní slicery | Filtrování podle skupiny, velikosti a plemene |
-| 🧭 Navigace | Přepínání mezi stránkami reportu |
-| 💡 Dynamické texty | Did You Know? a Behavior Insight |
-| ⭐ Behaviorální hodnocení | Hvězdičkové hodnocení vlastností |
-| 🐕 Breed Profile | Detailní informace o vybraném plemeni |
-| 🌐 Learn More | Přímý odkaz na detailní popis plemene |
-| 🔄 Reset Filters | Vymazání všech filtrů na stránce |
+Tato kategorie je následně použita v detailním profilu plemene jako slovní interpretace jeho společenskosti.
 
 ---
 
-# 📁 Struktura projektu
+## ⚙️ Použité technologie
+
+| Technologie | Využití |
+|---|---|
+| Microsoft Power BI Desktop | Tvorba datového modelu, reportu a vizualizací |
+| Power Query | Čištění, transformace a příprava dat |
+| DAX | Výpočty, KPI, dynamické texty a interaktivní prvky |
+| GitHub | Prezentace a dokumentace projektu |
+
+---
+
+## ✨ Klíčové funkce reportu
+
+- interaktivní filtrování pomocí slicerů,
+- navigace mezi jednotlivými stránkami,
+- vzájemné filtrování vizualizací,
+- dynamické KPI ukazatele,
+- dynamické textové panely,
+- detailní profil vybraného plemene,
+- hvězdičkové hodnocení vlastností,
+- slovní interpretace společenskosti,
+- externí odkaz na detailní informace o plemeni,
+- tlačítko pro vymazání všech filtrů.
+
+---
+
+## 📈 Použité vizualizace
+
+Report využívá několik typů vizualizací:
+
+- KPI karty,
+- sloupcové grafy,
+- prstencový graf,
+- bodový graf,
+- tabulku,
+- matici,
+- slicery,
+- textové karty,
+- navigační a akční tlačítka.
+
+---
+
+## 📁 Struktura repozitáře
 
 ```text
 Dog-Breeds-Analysis/
 │
 ├── Dog_Breeds_Analysis.pbix
-├── dogs_cleaned.csv
 ├── README.md
+│
 └── images/
-    └── dashboard-preview.png
+    ├── executive-dashboard.png
+    ├── physical-characteristics.png
+    ├── behavior-lifestyle.png
+    └── breed-profile.png
 ```
-
----
