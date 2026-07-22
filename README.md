@@ -197,9 +197,9 @@ Report využívá několik typů vizualizací:
 # 📁 Struktura repozitáře
 
 ```text
-Dog-Breeds-Analysis/
+Projekt_5/
 │
-├── Dog_Breeds_Analysis.pbix
+├── Dog Breeds Analysis.pbix
 ├── README.md
 │
 └── images/
