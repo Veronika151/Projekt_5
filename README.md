@@ -42,7 +42,7 @@ Report obsahuje čtyři interaktivní stránky, které uživatele postupně prov
 ### 1. Executive Dashboard
 
 <p align="center">
-  <img src="images/01-executive-dashboard.png" alt="Executive Dashboard" width="650">
+  <img src="images/01-executive-dashboard.png" alt="Executive Dashboard" width="700">
 </p>
 
 Úvodní stránka poskytuje rychlý přehled celého datasetu. Zobrazuje počet analyzovaných plemen, průměrnou výšku, průměrnou hmotnost a průměrnou délku života.
@@ -54,7 +54,7 @@ Součástí stránky je porovnání počtu plemen podle skupin a jejich rozděle
 ## 2. Physical Characteristics
 
 <p align="center">
-  <img src="images/02-physical-characteristics.png" alt="Physical Characteristics" width="900">
+  <img src="images/02-physical-characteristics.png" alt="Physical Characteristics" width="700">
 </p>
 
 Stránka je zaměřena na fyzické charakteristiky jednotlivých plemen.
@@ -68,7 +68,7 @@ Součástí stránky je také dynamický panel **Did You Know?**, který zobrazu
 ## 3. Behavior & Lifestyle
 
 <p align="center">
-  <img src="images/03-behavior-lifestyle.png" alt="Behavior & Lifestyle" width="900">
+  <img src="images/03-behavior-lifestyle.png" alt="Behavior & Lifestyle" width="700">
 </p>
 
 Stránka porovnává behaviorální charakteristiky jednotlivých skupin plemen.
@@ -86,7 +86,7 @@ Součástí stránky je dynamický panel **Behavior Insight**, který automatick
 ## 4. Breed Profile
 
 <p align="center">
-  <img src="images/04-breed-profile.png" alt="Breed Profile" width="900">
+  <img src="images/04-breed-profile.png" alt="Breed Profile" width="700">
 </p>
 
 Poslední stránka nabízí detailní profil vybraného plemene.
