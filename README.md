@@ -1,4 +1,4 @@
-# 🐶 Dog Breeds Analysis Dashboard
+# 🐶 Dog Breeds Analysis
 
 Cílem projektu bylo vytvořit interaktivní dashboard v prostředí **Microsoft Power BI**, který umožňuje přehledně analyzovat fyzické a behaviorální charakteristiky psích plemen.
 
@@ -32,7 +32,7 @@ Projekt využívá veřejně dostupný dataset obsahující informace o fyzický
 
 > https://www.kaggle.com/datasets/yonkotoshiro/dogs-breeds
 
-Před vytvořením reportu byla data upravena v prostředí **Power Query**, kde byly zkontrolovány datové typy, odstraněny nepotřebné sloupce a připraven datový model pro následnou analýzu.
+Před vytvořením reportu byla data připravena v prostředí Power Query, kde byly zkontrolovány datové typy a vytvořeny referenční tabulky pro datový model.
 
 ---
 
