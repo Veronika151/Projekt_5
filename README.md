@@ -48,7 +48,7 @@ Report obsahuje čtyři interaktivní stránky, které uživatele postupně prov
 
 Úvodní stránka poskytuje rychlý přehled celého datasetu. Zobrazuje počet analyzovaných plemen, průměrnou výšku, průměrnou hmotnost a průměrnou délku života.
 
-Součástí stránky je porovnání počtu plemen podle skupin a jejich rozdělení do velikostních kategorií. Slouží jako výchozí bod pro další analýzu reportu.
+Součástí stránky je porovnání počtu plemen podle skupin a jejich rozdělení do velikostních kategorií.
 
 ---
 
@@ -185,7 +185,7 @@ Tato informace je následně zobrazena v detailním profilu vybraného plemene.
 Report využívá několik typů vizualizací:
 
 - KPI karty,
-- seskupený sloupcový graf,
+- skupinový sloupcový graf,
 - prstencový graf,
 - bodový graf,
 - tabulku,
